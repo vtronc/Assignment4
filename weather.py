@@ -1,7 +1,7 @@
 import os
 import requests
 from geopy import Nominatim
-
+from dotenv import load_dotenv
 
 def get_location(city):
     geolocator = Nominatim(user_agent="myGeolocator")
@@ -10,7 +10,8 @@ def get_location(city):
 
 
 def get_weather(city):
-    apiKey = "c7ebe4d8952f6575f16c8810933b14ef"
+    load_dotenv()
+    apiKey = os.getenv("apiKey")
     coords = get_location(city)
     apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat={}&lon={}&exclude={}&units={}&appid={}".format(
         coords[0], coords[1], "hourly,minutely,alerts", "imperial", apiKey)
