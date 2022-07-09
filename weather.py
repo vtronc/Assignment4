@@ -2,6 +2,7 @@ import os
 import requests
 from geopy import Nominatim
 
+
 def get_location(city):
     geolocator = Nominatim(user_agent="myGeolocator")
     location = geolocator.geocode(city)
@@ -38,6 +39,7 @@ def get_choices():
     print("2- Display chances of rain ")
     print("3- Select a different location ")
     print("4- Exit weather service ")
+
 
 def get_menu():
     loop = True
@@ -85,4 +87,3 @@ def get_menu():
 
 if __name__ == "__main__":
     get_menu()
-
