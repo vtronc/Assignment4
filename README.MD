@@ -1,2 +1,2 @@
-CS 361
 Weather service
+CS 361
